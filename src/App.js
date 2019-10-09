@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+import PreferenceInput from './components/PreferenceInput/PreferenceInput';
+import Chart from './components/Chart/Chart';
+
 import './App.css';
 
 export default class App extends Component {
@@ -8,8 +11,8 @@ export default class App extends Component {
 
     this.state = {
       originValue: 100,
-      rate: 0.05,
-      occurrenceNumber: 10
+      rate: 1.13,
+      occurrenceNumber: 20
     };
   }
 
@@ -18,31 +21,32 @@ export default class App extends Component {
   };
 
   render() {
+    const { originValue, rate, occurrenceNumber } = this.state;
     return (
       <div className='App'>
         <h1>Snowball Rate</h1>
 
         <form className='preferences'>
-          <div className='preference'>
-            <label>rate?</label>
-            <input
-              type='number'
-              name='rate'
-              value={this.state.rate}
-              onChange={e => this.inputChange(e)}
-            />
-          </div>
-          <div className='preference'>
-            <label>occurrenceNumber?</label>
-            <input
-              type='number'
-              name='occurrenceNumber'
-              value={this.state.occurrenceNumber}
-              onChange={e => this.inputChange(e)}
-            />
-          </div>
+          <PreferenceInput
+            name='originValue'
+            value={originValue}
+            onChange={this.inputChange}
+          />
+
+          <PreferenceInput
+            name='rate'
+            value={rate}
+            onChange={this.inputChange}
+          />
+
+          <PreferenceInput
+            name='occurrenceNumber'
+            value={occurrenceNumber}
+            onChange={this.inputChange}
+          />
         </form>
-        <div className='chartBox'>chartBox</div>
+
+        <Chart state={this.state} />
       </div>
     );
   }

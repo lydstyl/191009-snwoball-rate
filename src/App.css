@@ -1,0 +1,43 @@
+h1 {
+  text-align: center;
+  margin: 40px auto;
+}
+
+.preferences {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  min-height: 150px;
+}
+
+.preference {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: calc((100% - 172px) / 2);
+}
+
+[type='number'] {
+  width: 50px;
+  margin-left: 20px;
+}
+
+.chartBox {
+  margin: 40px auto;
+}
+
+@media screen and (min-width: 568px) {
+  .preferences {
+    flex-direction: row;
+    min-height: 0;
+  }
+
+  h1,
+  .preferences,
+  .chartBox {
+    width: 90%;
+  }
+  .preference {
+    margin-right: 0;
+  }
+}
