@@ -3,39 +3,46 @@ h1 {
   margin: 40px auto;
 }
 
+.PreferenceAndChartWrapper {
+  margin-top: 80px;
+}
+
 .preferences {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   min-height: 150px;
+  margin-top: 60px;
 }
 
 .preference {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  margin-right: calc((100% - 172px) / 2);
+  margin-right: calc((100% - 202px) / 2);
 }
 
 [type='number'] {
-  width: 50px;
+  width: 80px;
   margin-left: 20px;
 }
 
 .chartBox {
-  margin: 40px auto;
+  margin: 40px auto 0;
 }
 
 @media screen and (min-width: 568px) {
   .preferences {
     flex-direction: row;
+    max-width: 1440px;
     min-height: 0;
+    margin: auto;
   }
 
   h1,
-  .preferences,
   .chartBox {
     width: 90%;
+    max-width: 1440px;
   }
   .preference {
     margin-right: 0;
