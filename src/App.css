@@ -34,6 +34,7 @@ h1 {
 @media screen and (min-width: 568px) {
   .preferences {
     flex-direction: row;
+    flex-wrap: wrap;
     max-width: 1440px;
     min-height: 0;
     margin: auto;
@@ -45,6 +46,13 @@ h1 {
     max-width: 1440px;
   }
   .preference {
-    margin-right: 0;
+    width: 40%;
+    margin: 10px 0;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .preference {
+    width: 14%;
   }
 }

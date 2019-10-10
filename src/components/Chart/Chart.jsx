@@ -1,7 +1,9 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 
-const Chart = ({ state: { originValue, rate, occurrenceNumber } }) => {
+const Chart = ({
+  state: { originValue, rate, addEveryOccurence, occurrenceNumber }
+}) => {
   const data = {
     labels: [],
     datasets: [
@@ -20,7 +22,8 @@ const Chart = ({ state: { originValue, rate, occurrenceNumber } }) => {
     data.labels.push(i);
 
     data.datasets[0].data.push(val);
-    val = Math.round(val * rate);
+    val = val * rate;
+    val = Math.round(val + addEveryOccurence);
   }
 
   return (

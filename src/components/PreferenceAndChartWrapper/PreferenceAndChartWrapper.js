@@ -10,16 +10,22 @@ export default class PreferenceAndChartWrapper extends Component {
     this.state = {
       originValue: 100,
       rate: 1.13,
+      addEveryOccurence: 100,
       occurrenceNumber: 20
     };
   }
 
   inputChange = ({ target: { name, value } }) => {
-    this.setState({ [name]: value });
+    this.setState({ [name]: parseFloat(value) });
   };
 
   render() {
-    const { originValue, rate, occurrenceNumber } = this.state;
+    const {
+      originValue,
+      rate,
+      addEveryOccurence,
+      occurrenceNumber
+    } = this.state;
     return (
       <div className='PreferenceAndChartWrapper'>
         <form className='preferences'>
@@ -32,6 +38,12 @@ export default class PreferenceAndChartWrapper extends Component {
           <PreferenceInput
             name='rate'
             value={rate}
+            onChange={this.inputChange}
+          />
+
+          <PreferenceInput
+            name='addEveryOccurence'
+            value={addEveryOccurence}
             onChange={this.inputChange}
           />
 
