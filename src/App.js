@@ -9,7 +9,6 @@ const App = () => {
     <div>
       <h1>Snowball Rate</h1>
       <PreferenceAndChartWrapper />
-      <PreferenceAndChartWrapper />
     </div>
   );
 };
