@@ -34,7 +34,7 @@ const Chart = ({
 
   let val = originValue;
   let val2 = originValue2;
-  for (let i = 1; i <= occurrenceNumber; i++) {
+  for (let i = 0; i <= occurrenceNumber; i++) {
     data.labels.push(i);
 
     data.datasets[0].data.push(val);
